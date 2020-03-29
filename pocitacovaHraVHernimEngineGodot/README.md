@@ -22,4 +22,6 @@ Jde o jednoho vojáka, který se chce pomstít nepřátelskému veliteli, který
 Budu kódovat v GDScriptu což je upravený Python dělaný přímo pro Godot. Je v tom spoustu užitečných funkcí, které pomůžou k jednoduššímu programování.
 
 ## 7. Reklama
-Reklama bude buď jednoduché video nebo plakát. Tvořený buď v Premieru nebo Photoshopu.
+Reklama bude buď jednoduchý plakát. Tvořený buď v Photoshopu.
+
+[home](https://github.com/Boubik/HomeWork/)
