@@ -24,4 +24,7 @@ Budu kódovat v GDScriptu což je upravený Python dělaný přímo pro Godot. J
 ## 7. Reklama
 Reklama bude buď jednoduchý plakát. Tvořený buď v Photoshopu.
 
+## Info navíc
+Hra je tvořená podle [videa](https://www.youtube.com/watch?v=sQ1FpD0DYF8&list=PLsk-HSGFjnaFC8kEv6MaLXnnDcevGpSWf).
+
 [home](https://github.com/Boubik/HomeWork/)
