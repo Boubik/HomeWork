@@ -121,8 +121,9 @@ class Node
 
     static function getNodeByName($name)
     {
+        $name = strtoupper($name);
         foreach (self::$nodes as $node) {
-            if ($node->getName() == $name) {
+            if (strtoupper($node->getName()) == $name) {
                 return $node;
             }
         }
