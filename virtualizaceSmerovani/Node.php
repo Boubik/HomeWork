@@ -130,4 +130,13 @@ class Node
         echo "routr " . $name . " nebyl nalezen";
         exit();
     }
+
+    static function getDistanceByNode($table, $node)
+    {
+        foreach ($table as $values) {
+            if ($node == $values["node"]) {
+                return $values["distance"];
+            }
+        }
+    }
 }
