@@ -6,7 +6,7 @@ class Search
     static public Node $start;
     static public Node $end;
 
-    static function run(Node $start, Node $end)
+    static function run(Node $start)
     {
         $unvisited = Node::getNodes();
         $table = array();
@@ -48,6 +48,15 @@ class Search
             echo "<br><br><br><br>";
             */
         }
+        /*foreach ($table as $key => $values) {
+            echo $values["node"]->getName();
+        }
+        echo "<br>";
+        $table = self::sortTable($table, $start);
+        foreach ($table as $key => $values) {
+            echo $values["node"]->getName();
+        }
+        echo "<br>";*/
 
         return $table;
     }
@@ -97,6 +106,31 @@ class Search
             }
             echo "<br>";
         }
+    }
+
+    static function echoTableV2(array $table, Node $start)
+    {
+        $table = self::sortTable($table, $start);
+        echo "<table border=\"1\";>";
+        foreach ($table as $row) {
+            echo "<tr>";
+            echo "<th>";
+            if ($row["previus"] === null) {
+                echo "null";
+            } else {
+                echo $row["previus"]->getName();
+            }
+            echo "</th>";
+            echo "<th>";
+            if ($row["node"] === null) {
+                echo "null";
+            } else {
+                echo $row["node"]->getName();
+            }
+            echo "</th>";
+            echo "</tr>";
+        }
+        echo "</table>";
     }
 
     static function getPathByTable(array $table, $end)
@@ -155,5 +189,26 @@ class Search
             }
         }
         return false;
+    }
+
+    static function sortTable($table, $start)
+    {
+        $count = count($table);
+        $i = 0;
+        $curentNode = self::findNodeRow($table, $start);
+        for ($count; $count != 0; $count--) {
+            foreach ($table as $key => $values) {
+                if ($values == $curentNode) {
+                    $m = $table[$i];
+                    $table[$i] = $curentNode;
+                    $table[$key] = $m;
+                    $i++;
+                    break;
+                }
+            }
+        }
+        $table = array_reverse($table);
+        unset($table[0]);
+        return $table;
     }
 }
