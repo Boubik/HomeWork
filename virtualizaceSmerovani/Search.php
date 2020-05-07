@@ -99,6 +99,26 @@ class Search
         }
     }
 
+    static function getPathByTable(array $table, $end)
+    {
+        $path = array();
+        $curSearch = $end;
+        $path[] = $curSearch;
+        while (true) {
+            foreach ($table as $key => $value) {
+                if ($curSearch == $value["node"]) {
+                    $curSearch = $value["previus"];
+                    if ($curSearch === null) {
+                        return array_reverse($path);
+                    }
+                    $path[] = $curSearch;
+                    unset($table[$key]);
+                    break;
+                }
+            }
+        }
+    }
+
     static function findNodeRow($table, Node $node)
     {
         foreach ($table as $value) {

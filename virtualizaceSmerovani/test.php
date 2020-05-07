@@ -23,10 +23,15 @@
 
     echo "<br><br>";
 
-    echo "Start: " . $nodes[1]->getName() . " Konec: " . $nodes[0]->getName() . "<br>";
-    $table = Search::run($nodes[1], $nodes[0]);
+    echo "Start: " . $nodes[1]->getName() . " Konec: " . Node::getNodeByName("R4")->getName() . "<br>";
+    $table = Search::run($nodes[1], Node::getNodeByName("R4"));
     Search::echoTable($table);
 
+    echo "<br><br>";
+    $cesta = Search::getPathByTable($table, $nodes[0]);
+    foreach ($cesta as $value) {
+        echo $value->getName() . "<br>";
+    };
     ?>
 </body>
 

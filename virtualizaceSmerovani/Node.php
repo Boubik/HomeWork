@@ -118,4 +118,15 @@ class Node
         }
         return array("x" => $xmax + $xmin, "y" => $ymax + $ymin);
     }
+
+    static function getNodeByName($name)
+    {
+        foreach (self::$nodes as $node) {
+            if ($node->getName() == $name) {
+                return $node;
+            }
+        }
+        echo "routr " . $name . " nebyl nalezen";
+        exit();
+    }
 }
